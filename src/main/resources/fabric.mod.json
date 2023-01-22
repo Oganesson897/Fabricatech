@@ -8,7 +8,7 @@
   "contact": {
     "sources": "https://github.com/Darknight123MC/Fabricatech"
   },
-  "license": "CC0-1.0",
+  "license": "LGPL-3.0",
   "icon": "assets/fabricatech/icon.png",
   "environment": "*",
   "entrypoints": {
