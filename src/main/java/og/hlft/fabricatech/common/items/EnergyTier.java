@@ -1,4 +1,4 @@
-package og.hlft.fabricatech.items;
+package og.hlft.fabricatech.common.items;
 
 public enum EnergyTier {
     TEST(40000, 1000, 1000);

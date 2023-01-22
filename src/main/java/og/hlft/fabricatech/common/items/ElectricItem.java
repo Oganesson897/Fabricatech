@@ -1,4 +1,4 @@
-package og.hlft.fabricatech.items;
+package og.hlft.fabricatech.common.items;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -6,6 +6,7 @@ import team.reborn.energy.api.base.SimpleEnergyItem;
 
 public class ElectricItem extends Item implements SimpleEnergyItem {
     public final EnergyTier energyTier;
+    public double COPh = 1.0;
 
     public ElectricItem(Settings settings, EnergyTier tier) {
         super(settings);
@@ -14,17 +15,17 @@ public class ElectricItem extends Item implements SimpleEnergyItem {
 
     @Override
     public long getEnergyCapacity(ItemStack stack) {
-        return energyTier.capacity;
+        return (long) (energyTier.capacity * COPh);
     }
 
     @Override
     public long getEnergyMaxInput(ItemStack stack) {
-        return energyTier.maxInput;
+        return (long) (energyTier.maxInput * COPh);
     }
 
     @Override
     public long getEnergyMaxOutput(ItemStack stack) {
-        return energyTier.maxOutput;
+        return (long) (energyTier.maxOutput * COPh);
     }
 
     @Override
