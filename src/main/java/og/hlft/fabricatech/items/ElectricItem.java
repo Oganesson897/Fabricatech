@@ -26,4 +26,23 @@ public class ElectricItem extends Item implements SimpleEnergyItem {
     public long getEnergyMaxOutput(ItemStack stack) {
         return energyTier.maxOutput;
     }
+
+    @Override
+    public boolean isItemBarVisible(ItemStack stack) {
+        return true;
+    }
+
+    @Override
+    public int getItemBarColor(ItemStack stack) {
+        return 0x00FFEB;
+    }
+
+    @Override
+    public int getItemBarStep(ItemStack stack) {
+        if (!(stack.getItem() instanceof ElectricItem electricItem)) {
+            throw new UnsupportedOperationException();
+        }
+
+        return Math.round((electricItem.getStoredEnergy(stack) * 100f / electricItem.getEnergyCapacity(stack)) * 13) / 100;
+    }
 }
