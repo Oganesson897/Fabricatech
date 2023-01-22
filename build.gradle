@@ -19,6 +19,10 @@ repositories {
 			includeGroup "me.shedaniel.cloth"
 		}
 	}
+	maven {
+		name "TechReborn"
+		url "https://maven.fabricmc.net/teamreborn"
+	}
 	mavenCentral()
 }
 
@@ -29,7 +33,7 @@ dependencies {
 
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	include modApi('teamreborn:energy:${energy_version}') {
+	include modApi('teamreborn:energy:2.3.0') {
 		exclude(group: "net.fabricmc.fabric-api")
 	}
 
