@@ -19,9 +19,6 @@
       "og.hlft.fabricatech.Fabricatech"
     ]
   },
-  "mixins": [
-    "modid.mixins.json"
-  ],
   "depends": {
     "fabricloader": ">=0.14.3",
     "fabric": "*",
