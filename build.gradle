@@ -14,13 +14,13 @@ repositories {
 	maven {
 		name "REI"
 		url "https://maven.shedaniel.me/"
-		content {
-			includeGroup "me.shedaniel"
-			includeGroup "me.shedaniel.cloth"
-		}
 	}
 	maven {
-		name "TechReborn"
+		name "Architectury"
+		url "https://maven.architectury.dev/"
+	}
+	maven {
+		name "EnergyAPI"
 		url "https://maven.fabricmc.net/teamreborn"
 	}
 	mavenCentral()
@@ -33,11 +33,11 @@ dependencies {
 
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	include modApi('teamreborn:energy:2.3.0') {
+	include modApi("teamreborn:energy:${project.energy_api_version}") {
 		exclude(group: "net.fabricmc.fabric-api")
 	}
 
-	modImplementation("me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}")
+	modImplementation "me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}"
 }
 
 processResources {
