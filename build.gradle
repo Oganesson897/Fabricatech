@@ -17,6 +17,7 @@ repositories {
 		content {
 			includeGroup "me.shedaniel"
 			includeGroup "me.shedaniel.cloth"
+			includeGroup "dev.architectury"
 		}
 	}
 	maven {
@@ -38,6 +39,7 @@ dependencies {
 	}
 
 	modImplementation("me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}")
+	modRuntimeOnly "dev.architectury:architectury-fabric:6.2.43"
 }
 
 processResources {
