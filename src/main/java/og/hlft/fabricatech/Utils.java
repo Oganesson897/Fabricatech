@@ -3,9 +3,9 @@ package og.hlft.fabricatech;
 import net.minecraft.util.Identifier;
 
 public class Utils {
-    public static final String ID = "fabricatech";
+    public static final String MODID = "fabricatech";
     
-    public static Identifier get(String path) {
-        return new Identifier(ID, path);
+    public static Identifier asId(String path) {
+        return new Identifier(MODID, path);
     }
 }
