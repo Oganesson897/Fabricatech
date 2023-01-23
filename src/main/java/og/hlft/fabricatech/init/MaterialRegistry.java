@@ -18,5 +18,9 @@ public class MaterialRegistry {
         NICKEL = new Material("nickel").setItemPart(MaterialParts.ALL).setBlockPart(MaterialBlockParts.ALL);
         LEAD = new Material("lead").setItemPart(MaterialParts.ALL).setBlockPart(MaterialBlockParts.ALL);
         SILVER = new Material("silver").setItemPart(MaterialParts.ALL).setBlockPart(MaterialBlockParts.ALL);
+
+        IRON = new Material("iron").setItemPart(MaterialParts.VANILLA);
+        GOLD = new Material("gold").setItemPart(MaterialParts.VANILLA);
+        COPPER = new Material("copper").setItemPart(MaterialParts.VANILLA);
     }
 }
