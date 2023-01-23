@@ -8,8 +8,10 @@ import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import og.hlft.fabricatech.init.BlockRegistry;
 import og.hlft.fabricatech.init.ItemPredicateRegistry;
 import og.hlft.fabricatech.init.ItemRegistry;
+import og.hlft.fabricatech.init.VeinRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,6 +25,8 @@ public class Fabricatech implements ModInitializer, ClientModInitializer {
     @Override
     public void onInitialize() {
         ItemRegistry.register();
+        BlockRegistry.register();
+        VeinRegistry.register();
 
         LOGGER.info("Fabricatech setup done!");
     }
