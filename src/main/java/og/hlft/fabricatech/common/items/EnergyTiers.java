@@ -5,7 +5,7 @@ import team.reborn.energy.api.base.SimpleEnergyItem;
 
 public enum EnergyTiers implements SimpleEnergyItem {
 
-    TEST(40000, 1000, 1000);
+    TEST(400000, 10000, 1000);
 
     public final long capacity;
     public final long maxInput;

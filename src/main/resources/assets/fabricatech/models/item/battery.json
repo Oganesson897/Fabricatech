@@ -8,25 +8,25 @@
       "predicate": {
         "energy": 0.25
       },
-      "model": "fabricatech:item/battery_1"
+      "model": "fabricatech:item/battery/battery_1"
     },
     {
       "predicate": {
         "energy": 0.5
       },
-      "model": "fabricatech:item/battery_2"
+      "model": "fabricatech:item/battery/battery_2"
     },
     {
       "predicate": {
         "energy": 0.75
       },
-      "model": "fabricatech:item/battery_3"
+      "model": "fabricatech:item/battery/battery_3"
     },
     {
       "predicate": {
         "energy": 1.0
       },
-      "model": "fabricatech:item/battery_4"
+      "model": "fabricatech:item/battery/battery_4"
     }
   ]
 }

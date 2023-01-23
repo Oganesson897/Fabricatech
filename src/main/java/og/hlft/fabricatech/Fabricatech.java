@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import og.hlft.fabricatech.common.materials.RMaterials;
 import og.hlft.fabricatech.init.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,10 +22,11 @@ public class Fabricatech implements ModInitializer, ClientModInitializer {
 
     @Override
     public void onInitialize() {
-        ItemRegistry.register();
+        RMaterials.init();
+
         BlockRegistry.register();
+        ItemRegistry.register();
         VeinRegistry.register();
-        MaterialRegistry.register();
 
         LOGGER.info("Fabricatech setup done!");
     }
