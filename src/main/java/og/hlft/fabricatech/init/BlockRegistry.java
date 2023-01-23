@@ -1,6 +1,5 @@
 package og.hlft.fabricatech.init;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.MapColor;
@@ -9,7 +8,6 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.util.registry.Registry;
 import og.hlft.fabricatech.Fabricatech;
 
-import static og.hlft.fabricatech.Fabricatech.TAB;
 import static og.hlft.fabricatech.Fabricatech.asId;
 
 public class BlockRegistry {
@@ -22,7 +20,7 @@ public class BlockRegistry {
 
     public static void block(String id, Block block) {
         Registry.register(Registry.BLOCK, Fabricatech.asId(id), block);
-        Registry.register(Registry.ITEM, Fabricatech.asId(id), new BlockItem(block, new FabricItemSettings().group(TAB)));
+        Registry.register(Registry.ITEM, Fabricatech.asId(id), new BlockItem(block, ItemRegistry.settings()));
     }
 
     public static Block getBlock(String id) {

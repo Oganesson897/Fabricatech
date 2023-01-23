@@ -9,12 +9,12 @@ import net.minecraft.util.Identifier;
 import og.hlft.fabricatech.Fabricatech;
 import og.hlft.fabricatech.init.BlockRegistry;
 
-public class DatagenUtil {
+public class DataInfoWrapper {
 
-    private String id;
-    private Block block;
-    private Item item;
-    public DatagenUtil(String id) {
+    private final String id;
+    private final Block block;
+    private final Item item;
+    public DataInfoWrapper(String id) {
         this.id = id;
         this.block = BlockRegistry.getBlock(id);
         this.item = this.block.asItem();

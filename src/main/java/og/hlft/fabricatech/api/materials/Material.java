@@ -6,7 +6,7 @@ import og.hlft.fabricatech.Fabricatech;
 import java.util.ArrayList;
 
 public class Material {
-    private String id;
+    private final String id;
 
     private ArrayList<MaterialPart> itemParts;
 
@@ -18,19 +18,27 @@ public class Material {
 
     public Material setItemPart(ArrayList<MaterialPart> parts) {
         this.itemParts = parts;
-        for (int i = 0; i < parts.size(); i++) {
-            Registry.register(Registry.ITEM, Fabricatech.asId(this.id + parts.get(i).getID()), parts.get(i).getItem());
+        for (MaterialPart part : parts) {
+            Registry.register(Registry.ITEM, Fabricatech.asId(this.id + part.getID()), part.getItem());
         }
         return this;
     }
 
     public Material setBlockPart(ArrayList<MaterialBlockPart> parts) {
         this.blockParts = parts;
-        for (int i = 0; i < parts.size(); i++) {
-            Registry.register(Registry.BLOCK, Fabricatech.asId(this.id + parts.get(i).getID()), parts.get(i).getBlock());
-            Registry.register(Registry.ITEM, Fabricatech.asId(this.id + parts.get(i).getID()), parts.get(i).getBlockItem());
+        for (MaterialBlockPart part : parts) {
+            Registry.register(Registry.BLOCK, Fabricatech.asId(this.id + part.getID()), part.getBlock());
+            Registry.register(Registry.ITEM, Fabricatech.asId(this.id + part.getID()), part.getBlockItem());
         }
         return this;
+    }
+
+    public ArrayList<MaterialPart> getItemParts() {
+        return itemParts;
+    }
+
+    public ArrayList<MaterialBlockPart> getBlockParts() {
+        return blockParts;
     }
 
     public Material build() {

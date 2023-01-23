@@ -10,7 +10,7 @@ import og.hlft.fabricatech.Fabricatech;
 
 public class MaterialBlockPart {
 
-    private String id;
+    private final String id;
     public MaterialBlockPart(String id) {
         this.id = id;
     }

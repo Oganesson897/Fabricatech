@@ -1,5 +1,6 @@
 package og.hlft.fabricatech.init;
 
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.util.registry.Registry;
 import og.hlft.fabricatech.Fabricatech;
@@ -20,7 +21,7 @@ public class ItemRegistry {
     }
 
     public static Item.Settings settings() {
-        return new Item.Settings().group(TAB);
+        return new FabricItemSettings().group(TAB);
     }
 
     public static Item getItem(String id) {

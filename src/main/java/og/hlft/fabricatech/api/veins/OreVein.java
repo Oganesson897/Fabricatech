@@ -1,6 +1,5 @@
 package og.hlft.fabricatech.api.veins;
 
-import net.minecraft.block.Block;
 import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.feature.*;
@@ -12,11 +11,11 @@ import og.hlft.fabricatech.init.BlockRegistry;
 import java.util.Arrays;
 
 public class OreVein {
-    private String id;
-    private int veinSize;
-    private int perChunks;
-    private int maxHeight;
-    private int minHeight;
+    private final String id;
+    private final int veinSize;
+    private final int perChunks;
+    private final int maxHeight;
+    private final int minHeight;
 
     public OreVein(String id, int veinSize, int perChunks, int maxHeight, int minHeight) {
         this.veinSize = veinSize;
@@ -27,7 +26,7 @@ public class OreVein {
     }
 
     public ConfiguredFeature<?, ?> getStoneOreCf() {
-        return new ConfiguredFeature(Feature.ORE, new OreFeatureConfig(
+        return new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(
                 OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
                 BlockRegistry.getBlock(id + "_ore").getDefaultState(),
                 this.veinSize
@@ -35,7 +34,7 @@ public class OreVein {
     }
 
     public ConfiguredFeature<?, ?> getDeepslateOreCf() {
-        return new ConfiguredFeature(Feature.ORE, new OreFeatureConfig(
+        return new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(
                 OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES,
                 BlockRegistry.getBlock("deepslate_" + id + "_ore").getDefaultState(),
                 this.veinSize

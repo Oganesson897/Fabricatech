@@ -6,7 +6,7 @@ import og.hlft.fabricatech.Fabricatech;
 
 public class MaterialPart {
 
-    private String id;
+    private final String id;
     public MaterialPart(String id) {
         this.id = id;
     }
