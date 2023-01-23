@@ -16,18 +16,24 @@ public class Material {
         this.id = id;
     }
 
-    public void setItemPart(ArrayList<MaterialPart> parts) {
+    public Material setItemPart(ArrayList<MaterialPart> parts) {
         this.itemParts = parts;
         for (int i = 0; i < parts.size(); i++) {
             Registry.register(Registry.ITEM, Fabricatech.asId(this.id + parts.get(i).getID()), parts.get(i).getItem());
         }
+        return this;
     }
 
-    public void setBlockPart(ArrayList<MaterialBlockPart> parts) {
+    public Material setBlockPart(ArrayList<MaterialBlockPart> parts) {
         this.blockParts = parts;
         for (int i = 0; i < parts.size(); i++) {
             Registry.register(Registry.BLOCK, Fabricatech.asId(this.id + parts.get(i).getID()), parts.get(i).getBlock());
             Registry.register(Registry.ITEM, Fabricatech.asId(this.id + parts.get(i).getID()), parts.get(i).getBlockItem());
         }
+        return this;
+    }
+
+    public Material build() {
+        return this;
     }
 }
