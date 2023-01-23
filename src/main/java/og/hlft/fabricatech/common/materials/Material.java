@@ -1,4 +1,4 @@
-package og.hlft.fabricatech.api.materials;
+package og.hlft.fabricatech.common.materials;
 
 import net.minecraft.util.registry.Registry;
 import og.hlft.fabricatech.Fabricatech;

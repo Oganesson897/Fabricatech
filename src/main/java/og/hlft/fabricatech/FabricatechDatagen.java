@@ -6,7 +6,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.SimpleFabricLootTableProvider
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.context.LootContextType;
 import net.minecraft.util.Identifier;
-import og.hlft.fabricatech.api.datagen.DataInfoWrapper;
+import og.hlft.fabricatech.datagen.DataInfoWrapper;
 
 import java.util.function.BiConsumer;
 

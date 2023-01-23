@@ -1,4 +1,4 @@
-package og.hlft.fabricatech.api.materials;
+package og.hlft.fabricatech.common.materials;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;

@@ -1,4 +1,4 @@
-package og.hlft.fabricatech.api.datagen;
+package og.hlft.fabricatech.datagen;
 
 import net.minecraft.block.Block;
 import net.minecraft.data.server.BlockLootTableGenerator;

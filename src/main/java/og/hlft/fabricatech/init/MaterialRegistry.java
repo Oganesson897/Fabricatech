@@ -1,8 +1,8 @@
 package og.hlft.fabricatech.init;
 
-import og.hlft.fabricatech.api.materials.Material;
-import og.hlft.fabricatech.api.materials.MaterialBlockParts;
-import og.hlft.fabricatech.api.materials.MaterialParts;
+import og.hlft.fabricatech.common.materials.Material;
+import og.hlft.fabricatech.common.materials.MaterialBlockParts;
+import og.hlft.fabricatech.common.materials.MaterialParts;
 
 public class MaterialRegistry {
     public static Material TIN;

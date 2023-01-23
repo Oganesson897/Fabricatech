@@ -4,7 +4,7 @@ import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.feature.*;
 import og.hlft.fabricatech.Fabricatech;
-import og.hlft.fabricatech.api.veins.OreVein;
+import og.hlft.fabricatech.common.veins.OreVein;
 
 public class VeinRegistry {
     public static void register() {

@@ -1,4 +1,4 @@
-package og.hlft.fabricatech.api.veins;
+package og.hlft.fabricatech.common.veins;
 
 import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.gen.YOffset;

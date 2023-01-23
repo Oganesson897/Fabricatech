@@ -1,4 +1,4 @@
-package og.hlft.fabricatech.api.materials;
+package og.hlft.fabricatech.common.materials;
 
 import java.util.ArrayList;
 
