@@ -62,6 +62,30 @@ jar {
 	from("LICENSE")
 }
 
+loom {
+	runs {
+		datagenClient {
+			inherit client
+			name "Datagen"
+			vmArg "-Dfabric-api.datagen"
+			vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
+			vmArg "-Dfabric-api.datagen.strict-validation"
+
+			runDir "build/datagen"
+		}
+	}
+}
+
+sourceSets {
+	main {
+		resources {
+			srcDirs += [
+					'src/main/generated'
+			]
+		}
+	}
+}
+
 publishing {
 	publications {
 		mavenJava(MavenPublication) {

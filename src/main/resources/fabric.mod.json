@@ -4,7 +4,7 @@
   "version": "${version}",
   "name": "Fabricatech",
   "description": "A Tech mod made by Chinese",
-  "authors": [ "Chemiofitor", "Oganesson897(DarkNight123MC)"],
+  "authors": [ "Chemiofitor", "Oganesson897"],
   "contact": {
     "sources": "https://github.com/Darknight123MC/Fabricatech"
   },
@@ -17,6 +17,9 @@
     ],
     "client": [
       "og.hlft.fabricatech.Fabricatech"
+    ],
+    "fabric-datagen": [
+      "og.hlft.fabricatech.FabricatechDatagen"
     ]
   },
   "depends": {

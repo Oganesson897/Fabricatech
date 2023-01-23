@@ -1,7 +1,10 @@
 package og.hlft.fabricatech.init;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
+import net.minecraft.block.MapColor;
+import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.util.registry.Registry;
 import og.hlft.fabricatech.Fabricatech;
@@ -21,6 +24,11 @@ public class BlockRegistry {
         block("deepslate_lead_ore", new DeepslateOre());
         block("silver_ore", new StoneOre());
         block("deepslate_silver_ore", new DeepslateOre());
+
+        block("raw_tin_block", new Block(FabricBlockSettings.of(Material.STONE, MapColor.LIGHT_BLUE_GRAY).requiresTool().strength(5.0F, 6.0F)));
+        block("raw_nickel_block", new Block(FabricBlockSettings.of(Material.STONE, MapColor.PALE_YELLOW).requiresTool().strength(5.0F, 6.0F)));
+        block("raw_lead_block", new Block(FabricBlockSettings.of(Material.STONE, MapColor.PALE_PURPLE).requiresTool().strength(5.0F, 6.0F)));
+        block("raw_silver_block", new Block(FabricBlockSettings.of(Material.STONE, MapColor.LIGHT_GRAY).requiresTool().strength(5.0F, 6.0F)));
     }
 
     public static void block(String id, Block block) {
