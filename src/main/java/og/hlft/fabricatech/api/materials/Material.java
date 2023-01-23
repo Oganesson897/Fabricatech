@@ -1,6 +1,5 @@
 package og.hlft.fabricatech.api.materials;
 
-import net.minecraft.item.BlockItem;
 import net.minecraft.util.registry.Registry;
 import og.hlft.fabricatech.Fabricatech;
 
