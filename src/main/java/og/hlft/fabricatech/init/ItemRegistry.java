@@ -13,10 +13,6 @@ import static og.hlft.fabricatech.Fabricatech.asId;
 public class ItemRegistry {
     public static void register() {
         item("battery", new BatteryItem(settings(), EnergyTiers.TEST));
-        item("raw_tin", new Item(settings()));
-        item("raw_nickel", new Item(settings()));
-        item("raw_lead", new Item(settings()));
-        item("raw_silver", new Item(settings()));
     }
 
     public static void item(String id, Item item) {

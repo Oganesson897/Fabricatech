@@ -16,7 +16,7 @@ import static og.hlft.fabricatech.Fabricatech.asId;
 
 public class BlockRegistry {
     public static void register() {
-        block("tin_ore", new StoneOre());
+        /*block("tin_ore", new StoneOre());
         block("deepslate_tin_ore", new DeepslateOre());
         block("nickel_ore", new StoneOre());
         block("deepslate_nickel_ore", new DeepslateOre());
@@ -29,6 +29,8 @@ public class BlockRegistry {
         block("raw_nickel_block", new Block(FabricBlockSettings.of(Material.STONE, MapColor.PALE_YELLOW).requiresTool().strength(5.0F, 6.0F)));
         block("raw_lead_block", new Block(FabricBlockSettings.of(Material.STONE, MapColor.PALE_PURPLE).requiresTool().strength(5.0F, 6.0F)));
         block("raw_silver_block", new Block(FabricBlockSettings.of(Material.STONE, MapColor.LIGHT_GRAY).requiresTool().strength(5.0F, 6.0F)));
+
+    */
     }
 
     public static void block(String id, Block block) {
