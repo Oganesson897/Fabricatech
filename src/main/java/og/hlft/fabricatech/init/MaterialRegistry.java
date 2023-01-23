@@ -5,12 +5,12 @@ import og.hlft.fabricatech.api.materials.MaterialBlockParts;
 import og.hlft.fabricatech.api.materials.MaterialParts;
 
 public class MaterialRegistry {
-    public static final Material TIN;
-    public static final Material NICKEL;
-    public static final Material LEAD;
-    public static final Material SILVER;
+    public static Material TIN;
+    public static Material NICKEL;
+    public static Material LEAD;
+    public static Material SILVER;
 
-    static {
+    public static void register() {
         TIN = new Material("tin").setItemPart(MaterialParts.ALL).setBlockPart(MaterialBlockParts.ALL);
         NICKEL = new Material("nickel").setItemPart(MaterialParts.ALL).setBlockPart(MaterialBlockParts.ALL);
         LEAD = new Material("lead").setItemPart(MaterialParts.ALL).setBlockPart(MaterialBlockParts.ALL);
