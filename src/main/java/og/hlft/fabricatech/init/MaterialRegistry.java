@@ -9,6 +9,9 @@ public class MaterialRegistry {
     public static Material NICKEL;
     public static Material LEAD;
     public static Material SILVER;
+    public static Material IRON;
+    public static Material GOLD;
+    public static Material COPPER;
 
     public static void register() {
         TIN = new Material("tin").setItemPart(MaterialParts.ALL).setBlockPart(MaterialBlockParts.ALL);

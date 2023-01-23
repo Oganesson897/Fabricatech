@@ -17,7 +17,6 @@ public class FabricatechDatagen implements DataGeneratorEntrypoint {
     }
 
     private class BlockLoot extends SimpleFabricLootTableProvider {
-
         public BlockLoot(FabricDataGenerator dataGenerator, LootContextType lootContextType) {
             super(dataGenerator, lootContextType);
         }

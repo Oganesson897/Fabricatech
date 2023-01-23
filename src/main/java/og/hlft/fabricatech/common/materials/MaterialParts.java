@@ -10,7 +10,8 @@ public class MaterialParts {
     public static final MaterialPart ROD;
     public static final MaterialPart NUGGET;
     public static final MaterialPart RAW_ORE;
-    public static final ArrayList<MaterialPart> ALL;
+    public static final ArrayList<MaterialPart> ALL = new ArrayList<>();
+    public static final ArrayList<MaterialPart> VANILLA = new ArrayList<>();
 
     static {
         INGOT = new MaterialPart("ingot");
@@ -21,13 +22,20 @@ public class MaterialParts {
         NUGGET = new MaterialPart("nugget");
         RAW_ORE = new MaterialPart("raw");
 
-        ALL = new ArrayList<>();
         ALL.add(INGOT);
+
         ALL.add(PLATE);
         ALL.add(GEAR);
         ALL.add(DUST);
         ALL.add(ROD);
         ALL.add(NUGGET);
         ALL.add(RAW_ORE);
+
+        VANILLA.add(PLATE);
+        VANILLA.add(GEAR);
+        VANILLA.add(DUST);
+        VANILLA.add(ROD);
+        VANILLA.add(NUGGET);
+        VANILLA.add(RAW_ORE);
     }
 }
