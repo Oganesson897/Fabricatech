@@ -4,7 +4,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.util.registry.Registry;
 import og.hlft.fabricatech.Fabricatech;
-import og.hlft.fabricatech.common.blocks.FrameworkBlocks;
+import og.hlft.fabricatech.common.blocks.FrameworkBlock;
 import og.hlft.fabricatech.common.materials.RMaterial;
 import og.hlft.fabricatech.common.materials.RMaterialPart;
 import og.hlft.fabricatech.common.materials.RMaterials;
@@ -18,9 +18,9 @@ public class BlockRegistry {
         material(RMaterials.NICKEL);
         material(RMaterials.SILVER);
 
-        block("bronze_machine_framework", new FrameworkBlocks());
-        block("steel_machine_framework", new FrameworkBlocks());
-        block("tungsten_machine_framework", new FrameworkBlocks());
+        block("bronze_machine_framework", new FrameworkBlock());
+        block("steel_machine_framework", new FrameworkBlock());
+        block("tungsten_machine_framework", new FrameworkBlock());
     }
 
     protected static void material(RMaterial material) {
