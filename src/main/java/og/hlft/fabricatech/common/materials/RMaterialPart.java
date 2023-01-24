@@ -7,6 +7,7 @@ public enum RMaterialPart {
     BLOCK(PartType.BLOCK),
     RAW_BLOCK(PartType.BLOCK),
     ORE(PartType.BLOCK),
+    DEEPSLATE_ORE(PartType.BLOCK),
 
     PLATE(PartType.ITEM),
     GEAR(PartType.ITEM),
@@ -25,6 +26,10 @@ public enum RMaterialPart {
 
     public static RMaterialPart[] vanilla() {
         return new RMaterialPart[]{PLATE, GEAR, DUST, ROD};
+    }
+
+    public String id() {
+        return name().toLowerCase();
     }
 
     public enum PartType {

@@ -47,7 +47,9 @@ public class RMaterial {
     }
 
     public String makeRID(RMaterialPart part) {
-        return getId() + "_" + part.name().toLowerCase();
+        if (part == RMaterialPart.DEEPSLATE_ORE)
+            return "deepslate_" + getId() + "_ore";
+        return getId() + "_" + part.id();
     }
 
     public Item getPartItem(RMaterialPart part) {

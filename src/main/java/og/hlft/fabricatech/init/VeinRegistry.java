@@ -20,7 +20,7 @@ public class VeinRegistry {
        vein("silver_ore", new OreVein("silver", 2, 5, 63, 2).getStoneOreCf(), new OreVein("silver", 2, 5, 63, 2).getStoneOrePf());
        vein("deepslate_silver_ore", new OreVein("silver", 2, 5, 0, -63).getDeepslateOreCf(), new OreVein("silver", 2, 5, 0, -63).getDeepslateOrePf());
     }
-    public static void vein(String id, ConfiguredFeature<?,?> cf, PlacedFeature pf) {
+    protected static void vein(String id, ConfiguredFeature<?,?> cf, PlacedFeature pf) {
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, Fabricatech.asId(id), cf);
         Registry.register(BuiltinRegistries.PLACED_FEATURE, Fabricatech.asId(id), pf);
     }

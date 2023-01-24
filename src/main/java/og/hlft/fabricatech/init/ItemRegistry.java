@@ -29,7 +29,7 @@ public class ItemRegistry {
         material(RMaterials.SILVER);
     }
 
-    public static void material(RMaterial material) {
+    protected static void material(RMaterial material) {
         for (RMaterialPart part: material.getItemParts()) {
             simpleItem(material.makeRID(part));
         }
@@ -39,15 +39,15 @@ public class ItemRegistry {
         }
     }
 
-    public static void simpleItem(String id) {
+    protected static void simpleItem(String id) {
         item(id, new Item(settings()));
     }
 
-    public static void blockItem(String id) {
+    protected static void blockItem(String id) {
         item(id, new BlockItem(Registry.BLOCK.get(asId(id)), settings()));
     }
 
-    public static void item(String id, Item item) {
+    protected static void item(String id, Item item) {
         Registry.register(Registry.ITEM, Fabricatech.asId(id), item);
     }
 

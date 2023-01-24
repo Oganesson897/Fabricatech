@@ -66,10 +66,10 @@ loom {
 	runs {
 		datagenClient {
 			inherit client
-			name "Datagen"
+			name "Minecraft DataGen"
 			vmArg "-Dfabric-api.datagen"
 			vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
-			vmArg "-Dfabric-api.datagen.strict-validation"
+			vmArg "-Dfabric-api.datagen.modid=${project.modid}"
 
 			runDir "build/datagen"
 		}

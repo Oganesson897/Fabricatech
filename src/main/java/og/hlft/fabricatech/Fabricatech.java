@@ -14,8 +14,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class Fabricatech implements ModInitializer, ClientModInitializer {
+    public static final String MOD_NAME = "Fabricatech";
     public static final String MOD_ID = "fabricatech";
-    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_NAME);
 
     public static ItemGroup TAB = FabricItemGroupBuilder.create(new Identifier(MOD_ID, "main"))
             .icon(() -> Registry.ITEM.get(asId("battery")).getDefaultStack()).build();
