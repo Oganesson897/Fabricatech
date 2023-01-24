@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "fabricatech:item/battery_4"
+    "layer0": "fabricatech:item/battery/battery_4"
   }
 }
