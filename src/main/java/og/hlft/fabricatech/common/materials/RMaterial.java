@@ -14,6 +14,7 @@ public class RMaterial {
 
     private List<RMaterialPart> parts;
     private MapColor color;
+    private String chinese;
 
     public RMaterial(String id) {
         this.id = id;
@@ -26,6 +27,11 @@ public class RMaterial {
 
     public RMaterial setColor(MapColor color) {
         this.color = color;
+        return this;
+    }
+
+    public RMaterial setChinese(String chinese) {
+        this.chinese = chinese;
         return this;
     }
 
@@ -50,6 +56,13 @@ public class RMaterial {
         if (part == RMaterialPart.DEEPSLATE_ORE)
             return "deepslate_" + getId() + "_ore";
         return getId() + "_" + part.id();
+    }
+
+    public String makeChinese(RMaterialPart part) {
+        String s = part.getChinese();
+        if (s.contains("%"))
+            return s.replace("%", chinese);
+        return chinese + part.getChinese();
     }
 
     public Item getPartItem(RMaterialPart part) {

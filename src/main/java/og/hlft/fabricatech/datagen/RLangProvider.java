@@ -10,11 +10,12 @@ import net.minecraft.data.DataCache;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import og.hlft.fabricatech.common.materials.RMaterial;
 import og.hlft.fabricatech.common.materials.RMaterialPart;
+import og.hlft.fabricatech.init.ItemRegistry;
 import org.slf4j.Logger;
 
-import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Map;
 
@@ -33,7 +34,7 @@ public abstract class RLangProvider implements DataProvider {
     }
 
     @Override
-    public void run(DataCache cache) throws IOException {
+    public void run(DataCache cache) {
         Path path = getLangJsonPath(this.generator.getOutput());
         this.map.clear();
         init();
@@ -62,6 +63,18 @@ public abstract class RLangProvider implements DataProvider {
         map.put(item.getTranslationKey(), name);
     }
 
+    protected void item(String id) {
+        map.put(ItemRegistry.getItem(id).getTranslationKey(), beautifyName(id));
+    }
+
+    protected void item(String id, String name) {
+        map.put(ItemRegistry.getItem(id).getTranslationKey(), name);
+    }
+
+    protected void tip(String path, String tip) {
+        map.put("tip." + MOD_ID + "." + path, tip);
+    }
+
     protected void add(RMaterial material) {
         for (RMaterialPart part : material.getItemParts()) {
             map.put("item."+ MOD_ID + "." + material.makeRID(part), beautifyName(material.makeRID(part)));
@@ -70,6 +83,10 @@ public abstract class RLangProvider implements DataProvider {
         for (RMaterialPart part : material.getBlockParts()) {
             map.put("block."+ MOD_ID + "." + material.makeRID(part), beautifyName(material.makeRID(part)));
         }
+    }
+
+    protected void add(ItemGroup tab, String name) {
+        map.put("itemGroup." + tab.getName(), name);
     }
 
     protected void add(Block block, String name) {

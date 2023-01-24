@@ -14,7 +14,7 @@ import java.util.List;
 
 public class ItemUtil {
     public static void energyToolTip(ElectricItem electricItem, ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        Text text = new TranslatableText("tip.item.energy").formatted(Formatting.AQUA)
+        Text text = new TranslatableText("tip.fabricatech.energy").formatted(Formatting.AQUA)
                 .append(String.valueOf(electricItem.getStoredEnergy(stack)))
                 .append("/")
                 .append(String.valueOf(electricItem.getEnergyCapacity(stack)))

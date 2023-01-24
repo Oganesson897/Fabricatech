@@ -1,4 +1,7 @@
 {
+  "itemGroup.fabricatech.main": "Fabricatech",
+  "item.fabricatech.battery": "Battery",
+  "tip.fabricatech.energy": "Energy: ",
   "item.fabricatech.tin_ingot": "Tin Ingot",
   "item.fabricatech.tin_raw_ore": "Tin Raw Ore",
   "item.fabricatech.tin_nugget": "Tin Nugget",
@@ -42,5 +45,17 @@
   "block.fabricatech.silver_block": "Silver Block",
   "block.fabricatech.silver_raw_block": "Silver Raw Block",
   "block.fabricatech.silver_ore": "Silver Ore",
-  "block.fabricatech.deepslate_silver_ore": "Deepslate Silver Ore"
+  "block.fabricatech.deepslate_silver_ore": "Deepslate Silver Ore",
+  "item.fabricatech.iron_plate": "Iron Plate",
+  "item.fabricatech.iron_gear": "Iron Gear",
+  "item.fabricatech.iron_dust": "Iron Dust",
+  "item.fabricatech.iron_rod": "Iron Rod",
+  "item.fabricatech.gold_plate": "Gold Plate",
+  "item.fabricatech.gold_gear": "Gold Gear",
+  "item.fabricatech.gold_dust": "Gold Dust",
+  "item.fabricatech.gold_rod": "Gold Rod",
+  "item.fabricatech.copper_plate": "Copper Plate",
+  "item.fabricatech.copper_gear": "Copper Gear",
+  "item.fabricatech.copper_dust": "Copper Dust",
+  "item.fabricatech.copper_rod": "Copper Rod"
 }

@@ -12,13 +12,13 @@ public class RMaterials {
     public static RMaterial COPPER;
 
     public static void init() {
-        TIN = new RMaterial("tin").setColor(MapColor.LIGHT_BLUE_GRAY).setParts(RMaterialPart.values());
-        NICKEL = new RMaterial("nickel").setColor(MapColor.PALE_YELLOW).setParts(RMaterialPart.values());
-        LEAD = new RMaterial("lead").setColor(MapColor.PALE_PURPLE).setParts(RMaterialPart.values());
-        SILVER = new RMaterial("silver").setColor(MapColor.LIGHT_GRAY).setParts(RMaterialPart.values());
+        TIN = new RMaterial("tin").setChinese("锡").setColor(MapColor.LIGHT_BLUE_GRAY).setParts(RMaterialPart.values());
+        NICKEL = new RMaterial("nickel").setChinese("镍").setColor(MapColor.PALE_YELLOW).setParts(RMaterialPart.values());
+        LEAD = new RMaterial("lead").setChinese("铅").setColor(MapColor.PALE_PURPLE).setParts(RMaterialPart.values());
+        SILVER = new RMaterial("silver").setChinese("银").setColor(MapColor.LIGHT_GRAY).setParts(RMaterialPart.values());
 
-        IRON = new RMaterial("iron").setParts(RMaterialPart.vanilla());
-        GOLD = new RMaterial("gold").setParts(RMaterialPart.vanilla());
-        COPPER = new RMaterial("copper").setParts(RMaterialPart.vanilla());
+        IRON = new RMaterial("iron").setChinese("铁").setParts(RMaterialPart.vanilla());
+        GOLD = new RMaterial("gold").setChinese("金").setParts(RMaterialPart.vanilla());
+        COPPER = new RMaterial("copper").setChinese("铜").setParts(RMaterialPart.vanilla());
     }
 }
