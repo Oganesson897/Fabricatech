@@ -16,6 +16,7 @@ public class LangZHCNProvider extends RLangProvider {
     @Override
     protected void init() {
         add(Fabricatech.TAB, "法克法克法克");
+        add(Fabricatech.MATERIALS_TAB, "法克法克法克|材料");
 
         item("battery", "电池");
 
