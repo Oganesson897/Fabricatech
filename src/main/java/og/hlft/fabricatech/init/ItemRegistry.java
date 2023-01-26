@@ -31,11 +31,11 @@ public class ItemRegistry {
 
     protected static void material(RMaterial material) {
         for (RMaterialPart part: material.getItemParts()) {
-            simpleItem(material.makeRID(part));
+            simpleMaterial(material.makeRID(part));
         }
 
         for (RMaterialPart part: material.getBlockParts()) {
-            blockItem(material.makeRID(part));
+            blockItem(material.makeRID(part), materialSettings());
         }
     }
 
@@ -43,8 +43,12 @@ public class ItemRegistry {
         item(id, new Item(settings()));
     }
 
-    protected static void blockItem(String id) {
-        item(id, new BlockItem(Registry.BLOCK.get(asId(id)), settings()));
+    protected static void simpleMaterial(String id) {
+        item(id, new Item(materialSettings()));
+    }
+
+    protected static void blockItem(String id, Item.Settings settings) {
+        item(id, new BlockItem(Registry.BLOCK.get(asId(id)), settings));
     }
 
     protected static void item(String id, Item item) {
@@ -53,6 +57,10 @@ public class ItemRegistry {
 
     public static Item.Settings settings() {
         return new FabricItemSettings().group(TAB);
+    }
+
+    public static Item.Settings materialSettings() {
+        return new Item.Settings().group(Fabricatech.MATERIALS_TAB);
     }
 
     public static Item getItem(String id) {
