@@ -7,7 +7,7 @@ import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
 import og.hlft.fabricatech.common.materials.RMaterial;
 import og.hlft.fabricatech.common.materials.RMaterialPart;
-import og.hlft.fabricatech.common.materials.RMaterials;
+import og.hlft.fabricatech.init.RMaterials;
 
 public class RModelProvider extends FabricModelProvider {
     private static BlockStateModelGenerator blockGenerator;

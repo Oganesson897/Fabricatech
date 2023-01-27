@@ -4,7 +4,7 @@ import net.minecraft.data.DataGenerator;
 import og.hlft.fabricatech.Fabricatech;
 import og.hlft.fabricatech.common.materials.RMaterial;
 import og.hlft.fabricatech.common.materials.RMaterialPart;
-import og.hlft.fabricatech.common.materials.RMaterials;
+import og.hlft.fabricatech.init.RMaterials;
 
 import static og.hlft.fabricatech.Fabricatech.MOD_ID;
 

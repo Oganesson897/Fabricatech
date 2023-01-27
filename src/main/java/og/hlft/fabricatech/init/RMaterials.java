@@ -1,6 +1,8 @@
-package og.hlft.fabricatech.common.materials;
+package og.hlft.fabricatech.init;
 
 import net.minecraft.block.MapColor;
+import og.hlft.fabricatech.common.materials.RMaterial;
+import og.hlft.fabricatech.common.materials.RMaterialPart;
 
 public class RMaterials {
     public static RMaterial TIN;

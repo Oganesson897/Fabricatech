@@ -9,7 +9,7 @@ import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.util.Identifier;
 import og.hlft.fabricatech.common.materials.RMaterial;
 import og.hlft.fabricatech.common.materials.RMaterialPart;
-import og.hlft.fabricatech.common.materials.RMaterials;
+import og.hlft.fabricatech.init.RMaterials;
 
 import java.util.function.BiConsumer;
 

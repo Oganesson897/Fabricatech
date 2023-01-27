@@ -9,7 +9,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import og.hlft.fabricatech.common.materials.RMaterialPart;
-import og.hlft.fabricatech.common.materials.RMaterials;
+import og.hlft.fabricatech.init.RMaterials;
 import og.hlft.fabricatech.init.BlockRegistry;
 import og.hlft.fabricatech.init.ItemPredicateRegistry;
 import og.hlft.fabricatech.init.ItemRegistry;

@@ -2,7 +2,7 @@ package og.hlft.fabricatech.datagen;
 
 import net.minecraft.data.DataGenerator;
 import og.hlft.fabricatech.Fabricatech;
-import og.hlft.fabricatech.common.materials.RMaterials;
+import og.hlft.fabricatech.init.RMaterials;
 
 public class LangENUSProvider extends RLangProvider {
     public LangENUSProvider(DataGenerator generator) {

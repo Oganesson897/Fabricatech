@@ -9,7 +9,6 @@ import og.hlft.fabricatech.common.items.EnergyTiers;
 import og.hlft.fabricatech.common.items.impl.BatteryItem;
 import og.hlft.fabricatech.common.materials.RMaterial;
 import og.hlft.fabricatech.common.materials.RMaterialPart;
-import og.hlft.fabricatech.common.materials.RMaterials;
 
 import static og.hlft.fabricatech.Fabricatech.TAB;
 import static og.hlft.fabricatech.Fabricatech.asId;
