@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "fabricatech:block/nickel_raw_block"
+    "all": "fabricatech:block/raw_silver_block"
   }
 }

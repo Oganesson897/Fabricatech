@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "fabricatech:tin_block",
+    "fabricatech:raw_tin_block",
+    "fabricatech:tin_ore",
+    "fabricatech:deepslate_tin_ore",
+    "fabricatech:nickel_block",
+    "fabricatech:raw_nickel_block",
+    "fabricatech:nickel_ore",
+    "fabricatech:deepslate_nickel_ore",
+    "fabricatech:lead_block",
+    "fabricatech:raw_lead_block",
+    "fabricatech:lead_ore",
+    "fabricatech:deepslate_lead_ore",
+    "fabricatech:silver_block",
+    "fabricatech:raw_silver_block",
+    "fabricatech:silver_ore",
+    "fabricatech:deepslate_silver_ore"
+  ]
+}

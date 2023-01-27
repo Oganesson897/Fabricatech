@@ -2,12 +2,12 @@ package og.hlft.fabricatech.common.materials;
 
 public enum RMaterialPart {
     INGOT(PartType.ITEM, "锭"),
-    RAW_ORE(PartType.ITEM, "粗%"),
+    RAW_ORE(PartType.ITEM, "粗%", "raw_%"),
     NUGGET(PartType.ITEM, "粒"),
     BLOCK(PartType.BLOCK, "块"),
-    RAW_BLOCK(PartType.BLOCK, "粗%块"),
+    RAW_BLOCK(PartType.BLOCK, "粗%块", "raw_%_block"),
     ORE(PartType.BLOCK, "矿石"),
-    DEEPSLATE_ORE(PartType.BLOCK, "深层%矿石"),
+    DEEPSLATE_ORE(PartType.BLOCK, "深层%矿石", "deepslate_%_ore"),
 
     PLATE(PartType.ITEM, "板"),
     GEAR(PartType.ITEM, "齿轮"),
@@ -16,10 +16,17 @@ public enum RMaterialPart {
 
     private final PartType type;
     private final String chinese;
+    private String fixName = null;
 
     RMaterialPart(PartType type, String chinese) {
         this.type = type;
         this.chinese = chinese;
+    }
+
+    RMaterialPart(PartType type, String chinese, String fixName) {
+        this.type = type;
+        this.chinese = chinese;
+        this.fixName = fixName;
     }
 
     public PartType getType() {
@@ -35,6 +42,8 @@ public enum RMaterialPart {
     }
 
     public String id() {
+        if (fixName != null)
+            return fixName;
         return name().toLowerCase();
     }
 

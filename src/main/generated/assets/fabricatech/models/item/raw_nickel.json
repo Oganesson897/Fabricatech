@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "fabricatech:item/nickel_raw_ore"
+    "layer0": "fabricatech:item/raw_nickel"
   }
 }

@@ -12,7 +12,7 @@ public class LangENUSProvider extends RLangProvider {
     @Override
     protected void init() {
         add(Fabricatech.TAB, "Fabricatech");
-        add(Fabricatech.MATERIALS_TAB, "Fabricatech|Material");
+        add(Fabricatech.MATERIALS_TAB, "Fabricatech | Material");
 
         item("battery");
 
