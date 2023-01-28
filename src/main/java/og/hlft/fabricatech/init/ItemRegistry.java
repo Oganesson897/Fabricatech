@@ -38,19 +38,19 @@ public class ItemRegistry {
         }
     }
 
-    protected static void simpleItem(String id) {
+    private static void simpleItem(String id) {
         item(id, new Item(settings()));
     }
 
-    protected static void simpleMaterial(String id) {
+    private static void simpleMaterial(String id) {
         item(id, new Item(materialSettings()));
     }
 
-    protected static void blockItem(String id, Item.Settings settings) {
+    private static void blockItem(String id, Item.Settings settings) {
         item(id, new BlockItem(Registry.BLOCK.get(asId(id)), settings));
     }
 
-    protected static void item(String id, Item item) {
+    private static void item(String id, Item item) {
         Registry.register(Registry.ITEM, Fabricatech.asId(id), item);
     }
 

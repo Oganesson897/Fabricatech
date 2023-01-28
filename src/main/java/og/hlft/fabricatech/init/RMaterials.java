@@ -1,19 +1,24 @@
 package og.hlft.fabricatech.init;
 
 import net.minecraft.block.MapColor;
+import og.hlft.fabricatech.Fabricatech;
 import og.hlft.fabricatech.common.materials.RMaterial;
 import og.hlft.fabricatech.common.materials.RMaterialPart;
 
 public class RMaterials {
-    public static RMaterial TIN;
-    public static RMaterial NICKEL;
-    public static RMaterial LEAD;
-    public static RMaterial SILVER;
-    public static RMaterial IRON;
-    public static RMaterial GOLD;
-    public static RMaterial COPPER;
+    public static final RMaterial TIN;
+    public static final RMaterial NICKEL;
+    public static final RMaterial LEAD;
+    public static final RMaterial SILVER;
+    public static final RMaterial IRON;
+    public static final RMaterial GOLD;
+    public static final RMaterial COPPER;
 
     public static void init() {
+        Fabricatech.LOGGER.info("Fabricatech materials loading!");
+    }
+
+    static {
         TIN = new RMaterial("tin").setChinese("锡").setColor(MapColor.LIGHT_BLUE_GRAY).setParts(RMaterialPart.values());
         NICKEL = new RMaterial("nickel").setChinese("镍").setColor(MapColor.PALE_YELLOW).setParts(RMaterialPart.values());
         LEAD = new RMaterial("lead").setChinese("铅").setColor(MapColor.PALE_PURPLE).setParts(RMaterialPart.values());

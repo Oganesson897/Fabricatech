@@ -21,7 +21,7 @@ public class BlockRegistry {
         block("steel_machine_frame", new FrameBlock());
     }
 
-    protected static void material(RMaterial material) {
+    private static void material(RMaterial material) {
         for (RMaterialPart part : material.getBlockParts()) {
             if (part == RMaterialPart.RAW_BLOCK)
                 block(material.makeRID(part), rawMetal().mapColor(material.getColor()));
@@ -38,11 +38,11 @@ public class BlockRegistry {
         return FabricBlockSettings.copy(Blocks.RAW_IRON_BLOCK);
     }
 
-    protected static void block(String id, Block block) {
+    private static void block(String id, Block block) {
         Registry.register(Registry.BLOCK, Fabricatech.asId(id), block);
     }
 
-    protected static void block(String id, AbstractBlock.Settings settings) {
+    private static void block(String id, AbstractBlock.Settings settings) {
         block(id, new Block(settings));
     }
 

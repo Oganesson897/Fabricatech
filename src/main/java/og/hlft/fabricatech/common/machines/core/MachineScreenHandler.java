@@ -1,4 +1,4 @@
-package og.hlft.fabricatech.common.machines;
+package og.hlft.fabricatech.common.machines.core;
 
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.ScreenHandler;

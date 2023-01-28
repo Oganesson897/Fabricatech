@@ -1,4 +1,4 @@
-package og.hlft.fabricatech.common.machines;
+package og.hlft.fabricatech.common.machines.core;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -10,8 +10,6 @@ import net.minecraft.util.math.BlockPos;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class MachineTile extends BlockEntity implements MachineInv {
-
-
     public MachineTile(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
     }

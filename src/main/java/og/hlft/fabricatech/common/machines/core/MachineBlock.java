@@ -1,4 +1,4 @@
-package og.hlft.fabricatech.common.machines;
+package og.hlft.fabricatech.common.machines.core;
 
 import net.minecraft.block.BlockEntityProvider;
 import net.minecraft.block.BlockState;
@@ -17,6 +17,6 @@ public abstract class MachineBlock<T extends MachineTile> extends BlockWithEntit
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
         return getTileType().instantiate(pos, state);
     }
-
+    
     protected abstract BlockEntityType<T> getTileType();
 }

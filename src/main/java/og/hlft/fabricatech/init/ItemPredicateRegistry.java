@@ -13,7 +13,7 @@ public class ItemPredicateRegistry {
         energyPredicate(ItemRegistry.getItem("battery"));
     }
 
-    protected static void energyPredicate(Item item) {
+    private static void energyPredicate(Item item) {
         ModelPredicateProviderRegistry.register(item, new Identifier("energy"), (stack, world, entity, seed) -> {
             if (stack.getItem() instanceof SimpleEnergyItem energyItem) {
                 return ((float) energyItem.getStoredEnergy(stack)) / ((float) energyItem.getEnergyCapacity(stack));
