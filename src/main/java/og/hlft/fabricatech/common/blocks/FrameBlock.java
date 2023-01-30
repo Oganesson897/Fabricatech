@@ -5,7 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 
 public class FrameBlock extends Block {
-    public FrameBlock() {
-        super(FabricBlockSettings.of(Material.METAL).strength(3.0F));
-    }
+	public FrameBlock() {
+		super(FabricBlockSettings.of(Material.METAL).strength(3.0F));
+	}
 }
