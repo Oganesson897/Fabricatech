@@ -13,13 +13,13 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "og.hlft.yjn.fabricatech.Fabricatech"
+      "og.hlft.fabricatech.Fabricatech"
     ],
     "client": [
-      "og.hlft.yjn.fabricatech.Fabricatech"
+      "og.hlft.fabricatech.Fabricatech"
     ],
     "fabric-datagen": [
-      "og.hlft.yjn.fabricatech.FabricatechDatagen"
+      "og.hlft.fabricatech.FabricatechDatagen"
     ]
   },
   "depends": {
