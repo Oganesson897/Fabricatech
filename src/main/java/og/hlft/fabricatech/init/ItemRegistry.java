@@ -15,6 +15,7 @@ import og.hlft.fabricatech.common.items.impl.BatteryItem;
 import og.hlft.fabricatech.common.materials.RMaterial;
 import og.hlft.fabricatech.common.materials.RMaterialPart;
 
+@SuppressWarnings("unused")
 public class ItemRegistry {
     public static void register() {
         item("battery", new BatteryItem(settings(), EnergyTiers.TEST));

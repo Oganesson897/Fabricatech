@@ -18,7 +18,6 @@ import og.hlft.fabricatech.init.ItemRegistry;
 import og.hlft.fabricatech.init.RMachines;
 import og.hlft.fabricatech.init.RMaterials;
 import og.hlft.fabricatech.init.RecipeRegistry;
-import og.hlft.fabricatech.init.VeinRegistry;
 
 public class Fabricatech implements ModInitializer, ClientModInitializer {
     public static final String MOD_NAME = "Fabricatech";
@@ -39,7 +38,6 @@ public class Fabricatech implements ModInitializer, ClientModInitializer {
         RecipeRegistry.register();
         BlockRegistry.register();
         ItemRegistry.register();
-        VeinRegistry.register();
 
         LOGGER.info("Fabricatech setup done!");
     }
