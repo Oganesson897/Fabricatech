@@ -8,9 +8,11 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
+import og.hlft.fabricatech.common.itemgroups.ItemGroupContent;
 import og.hlft.fabricatech.common.materials.RMaterialPart;
 import og.hlft.fabricatech.init.BlockRegistry;
 import og.hlft.fabricatech.init.ItemPredicateRegistry;
@@ -38,6 +40,10 @@ public class Fabricatech implements ModInitializer, ClientModInitializer {
         RecipeRegistry.register();
         BlockRegistry.register();
         ItemRegistry.register();
+
+        ItemGroupEvents.MODIFY_ENTRIES_ALL.register((group, entries) -> Registries.ITEM.stream()
+                .filter(item -> item instanceof ItemGroupContent c && c.getItemGroup() == group)
+                .forEachOrdered(item -> ((ItemGroupContent) item).appendStacks(entries)));
 
         LOGGER.info("Fabricatech setup done!");
     }
