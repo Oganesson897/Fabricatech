@@ -14,8 +14,12 @@ public class RecipeRegistry {
     }
 
     private static void machine(RMachine machine) {
-        Registry.register(Registry.RECIPE_TYPE, asId(machine.recipeID), machine.getRecipeType());
-        Registry.register(Registry.RECIPE_SERIALIZER, asId(machine.recipeID), machine.getRecipeSerializer());
+        recipe(machine.getRecipeSerializer(), machine.getRecipeType(), machine.recipeID);
+    }
+
+    private static void recipe(RecipeSerializer<?> serializer, RecipeType<?> type, String id) {
+        Registry.register(Registry.RECIPE_TYPE, asId(id), type);
+        Registry.register(Registry.RECIPE_SERIALIZER, asId(id), serializer);
     }
 
     public static RecipeType<?> getRecipeType(String id) {

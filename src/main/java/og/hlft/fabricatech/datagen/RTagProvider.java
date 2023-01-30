@@ -8,6 +8,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import og.hlft.fabricatech.common.materials.RMaterial;
 import og.hlft.fabricatech.common.materials.RMaterialPart;
+import og.hlft.fabricatech.init.RMachines;
 import og.hlft.fabricatech.init.RMaterials;
 
 public class RTagProvider extends FabricTagProvider<Block> {
@@ -25,11 +26,17 @@ public class RTagProvider extends FabricTagProvider<Block> {
         materialBlock(RMaterials.NICKEL);
         materialBlock(RMaterials.LEAD);
         materialBlock(RMaterials.SILVER);
+
+        block(RMachines.ALLOYING_FURNACE.getBlock(), pickaxeBuilder);
     }
 
     protected void materialBlock(RMaterial material) {
         for (RMaterialPart part : material.getBlockParts()) {
             pickaxeBuilder.add(material.getPartBlock(part));
         }
+    }
+
+    protected void block(Block block, FabricTagBuilder<Block> builder) {
+        builder.add(block);
     }
 }

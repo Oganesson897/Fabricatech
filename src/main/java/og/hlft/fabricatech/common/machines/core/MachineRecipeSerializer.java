@@ -14,15 +14,15 @@ import java.util.List;
 
 import static net.minecraft.recipe.ShapedRecipe.outputFromJson;
 
-public class MachineRecipeSerializer<T extends RMachine> implements RecipeSerializer<MachineRecipe<T>> {
-    public T rMachine;
+public class MachineRecipeSerializer implements RecipeSerializer<MachineRecipe> {
+    public RMachine rMachine;
 
-    public MachineRecipeSerializer(T rMachine) {
+    public MachineRecipeSerializer(RMachine rMachine) {
         this.rMachine = rMachine;
     }
 
     @Override
-    public MachineRecipe<T> read(Identifier id, JsonObject json) {
+    public MachineRecipe read(Identifier id, JsonObject json) {
         List<Ingredient> inputs = new ArrayList<>();
         JsonHelper.getArray(json, "ingredients").forEach(element -> inputs.add(Ingredient.fromJson(element)));
         List<ItemStack> outputs = new ArrayList<>();
@@ -31,11 +31,11 @@ public class MachineRecipeSerializer<T extends RMachine> implements RecipeSerial
         int time = json.get("time").getAsInt();
         int energy = json.get("energy").getAsInt();
 
-        return new MachineRecipe<>(rMachine, id, inputs.toArray(new Ingredient[]{}), outputs.toArray(new ItemStack[]{}), time, energy);
+        return new MachineRecipe(rMachine, id, inputs.toArray(new Ingredient[]{}), outputs.toArray(new ItemStack[]{}), time, energy);
     }
 
     @Override
-    public MachineRecipe<T> read(Identifier id, PacketByteBuf buf) {
+    public MachineRecipe read(Identifier id, PacketByteBuf buf) {
         List<Ingredient> inputs = new ArrayList<>();
         for (int i = 0; i < buf.readInt(); i++) {
             inputs.add(Ingredient.fromPacket(buf));
@@ -46,11 +46,11 @@ public class MachineRecipeSerializer<T extends RMachine> implements RecipeSerial
         }
         int time = buf.readInt();
         int energy = buf.readInt();
-        return new MachineRecipe<>(rMachine, id, inputs.toArray(new Ingredient[]{}), outputs.toArray(new ItemStack[]{}), time, energy);
+        return new MachineRecipe(rMachine, id, inputs.toArray(new Ingredient[]{}), outputs.toArray(new ItemStack[]{}), time, energy);
     }
 
     @Override
-    public void write(PacketByteBuf buf, MachineRecipe<T> recipe) {
+    public void write(PacketByteBuf buf, MachineRecipe recipe) {
         buf.writeInt(recipe.inputs.length);
         for (Ingredient ingredient : recipe.inputs) {
             ingredient.write(buf);

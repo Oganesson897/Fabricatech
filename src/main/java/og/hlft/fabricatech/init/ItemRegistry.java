@@ -7,6 +7,7 @@ import net.minecraft.util.registry.Registry;
 import og.hlft.fabricatech.Fabricatech;
 import og.hlft.fabricatech.common.items.EnergyTiers;
 import og.hlft.fabricatech.common.items.impl.BatteryItem;
+import og.hlft.fabricatech.common.machines.RMachine;
 import og.hlft.fabricatech.common.materials.RMaterial;
 import og.hlft.fabricatech.common.materials.RMaterialPart;
 
@@ -17,6 +18,8 @@ import static og.hlft.fabricatech.Fabricatech.asId;
 public class ItemRegistry {
     public static void register() {
         item("battery", new BatteryItem(settings(), EnergyTiers.TEST));
+
+        material(RMachines.ALLOYING_FURNACE);
 
         material(RMaterials.COPPER);
         material(RMaterials.GOLD);
@@ -36,6 +39,10 @@ public class ItemRegistry {
         for (RMaterialPart part: material.getBlockParts()) {
             blockItem(material.makeRID(part), materialSettings());
         }
+    }
+
+    protected static void material(RMachine machine) {
+        blockItem(machine.machineID, settings());
     }
 
     private static void simpleItem(String id) {

@@ -25,7 +25,7 @@ public class RMachine {
         this.machineID = machineID;
         this.machineName = machineName;
         this.machineRecipeType = new MachineRecipeType();
-        this.machineRecipeSerializer = new MachineRecipeSerializer<>(this);
+        this.machineRecipeSerializer = new MachineRecipeSerializer(this);
     }
 
     public RMachine setRecipeID(String recipeID) {
@@ -57,5 +57,9 @@ public class RMachine {
 
     public RecipeSerializer<?> getRecipeSerializer() {
         return machineRecipeSerializer;
+    }
+
+    public String getMachineName() {
+        return machineName;
     }
 }

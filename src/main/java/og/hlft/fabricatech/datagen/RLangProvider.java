@@ -11,8 +11,10 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import og.hlft.fabricatech.common.machines.RMachine;
 import og.hlft.fabricatech.common.materials.RMaterial;
 import og.hlft.fabricatech.common.materials.RMaterialPart;
+import og.hlft.fabricatech.init.BlockRegistry;
 import og.hlft.fabricatech.init.ItemRegistry;
 import org.slf4j.Logger;
 
@@ -71,6 +73,10 @@ public abstract class RLangProvider implements DataProvider {
         map.put(ItemRegistry.getItem(id).getTranslationKey(), name);
     }
 
+    protected void block(String id, String name) {
+        map.put(BlockRegistry.getBlock(id).getTranslationKey(), name);
+    }
+
     protected void tip(String path, String tip) {
         map.put("tip." + MOD_ID + "." + path, tip);
     }
@@ -83,6 +89,10 @@ public abstract class RLangProvider implements DataProvider {
         for (RMaterialPart part : material.getBlockParts()) {
             map.put("block."+ MOD_ID + "." + material.makeRID(part), beautifyName(material.makeRID(part)));
         }
+    }
+
+    protected void add(RMachine machine) {
+        block(machine.machineID, machine.getMachineName());
     }
 
     protected void add(ItemGroup tab, String name) {

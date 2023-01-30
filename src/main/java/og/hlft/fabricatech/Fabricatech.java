@@ -30,6 +30,7 @@ public class Fabricatech implements ModInitializer, ClientModInitializer {
         RMachines.init();
 
         RecipeRegistry.register();
+        TileRegistry.register();
         BlockRegistry.register();
         ItemRegistry.register();
         VeinRegistry.register();

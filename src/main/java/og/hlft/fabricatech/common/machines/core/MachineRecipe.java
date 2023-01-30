@@ -12,8 +12,8 @@ import og.hlft.fabricatech.util.ItemUtil;
 
 import static og.hlft.fabricatech.Fabricatech.asId;
 
-public class MachineRecipe<T extends RMachine> implements Recipe<MachineTile> {
-    public T rMachine;
+public class MachineRecipe implements Recipe<MachineTile> {
+    public RMachine rMachine;
     private final Identifier id;
 
     protected final Ingredient[] inputs;
@@ -21,7 +21,7 @@ public class MachineRecipe<T extends RMachine> implements Recipe<MachineTile> {
     protected final int energy;
     protected final int time;
 
-    public MachineRecipe(T rMachine, Identifier id, Ingredient[] inputs, ItemStack[] outputs, int time, int energy) {
+    public MachineRecipe(RMachine rMachine, Identifier id, Ingredient[] inputs, ItemStack[] outputs, int time, int energy) {
         this.id = id;
         this.inputs = inputs;
         this.outputs = outputs;
