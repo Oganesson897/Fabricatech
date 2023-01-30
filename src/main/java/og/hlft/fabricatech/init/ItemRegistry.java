@@ -11,6 +11,7 @@ import og.hlft.fabricatech.common.items.EnergyTiers;
 import og.hlft.fabricatech.common.items.base.BaseBlockItem;
 import og.hlft.fabricatech.common.items.base.BaseItem;
 import og.hlft.fabricatech.common.items.base.BaseMaterialBlockItem;
+import og.hlft.fabricatech.common.items.base.BaseMaterialItem;
 import og.hlft.fabricatech.common.items.impl.BatteryItem;
 import og.hlft.fabricatech.common.materials.RMaterial;
 import og.hlft.fabricatech.common.materials.RMaterialPart;
@@ -31,13 +32,11 @@ public class ItemRegistry {
     }
 
     protected static void material(RMaterial material) {
-        for (RMaterialPart part : material.getItemParts()) {
+        for (RMaterialPart part : material.getItemParts())
             simpleMaterial(material.makeRID(part));
-        }
 
-        for (RMaterialPart part : material.getBlockParts()) {
+        for (RMaterialPart part : material.getBlockParts())
             materialBlockItem(material.makeRID(part), settings());
-        }
     }
 
     private static void simpleItem(String id) {
@@ -45,7 +44,7 @@ public class ItemRegistry {
     }
 
     private static void simpleMaterial(String id) {
-        item(id, new Item(settings()));
+        item(id, new BaseMaterialItem(settings()));
     }
 
     private static void blockItem(String id, Item.Settings settings) {
