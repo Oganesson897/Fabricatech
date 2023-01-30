@@ -10,6 +10,9 @@ import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.function.ExplosionDecayLootFunction;
+import net.minecraft.loot.function.SetCountLootFunction;
+import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.util.Identifier;
 import og.hlft.fabricatech.common.materials.RMaterial;
 import og.hlft.fabricatech.common.materials.RMaterialPart;
@@ -38,7 +41,10 @@ public class RBlockLootProvider extends SimpleFabricLootTableProvider {
             if (part == RMaterialPart.ORE || part == RMaterialPart.DEEPSLATE_ORE)
                 continue;
             consumer.accept(asId(material.makeRID(part)),
-                    LootTable.builder().pool(LootPool.builder().with(ItemEntry.builder(material.getPartBlock(part)))));
+                    LootTable.builder()
+                            .pool(LootPool.builder().with(ItemEntry.builder(material.getPartBlock(part)))
+                                    .apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1), false))
+                                    .apply(ExplosionDecayLootFunction.builder())));
         }
     }
 
