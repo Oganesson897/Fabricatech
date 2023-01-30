@@ -9,11 +9,13 @@ import static og.hlft.fabricatech.Fabricatech.LOGGER;
 public class FabricatechDatagen implements DataGeneratorEntrypoint {
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator generator) {
-        generator.addProvider(RModelProvider::new);
-        generator.addProvider(RBlockLootProvider::new);
-        generator.addProvider(LangENUSProvider::new);
-        generator.addProvider(LangZHCNProvider::new);
-        generator.addProvider(RTagProvider::new);
+        var pack = generator.createPack();
+
+        pack.addProvider(RModelProvider::new);
+        pack.addProvider(RBlockLootProvider::new);
+        pack.addProvider(LangENUSProvider::new);
+        pack.addProvider(LangZHCNProvider::new);
+        pack.addProvider(RTagProvider::new);
 
         LOGGER.info("Fabricatech dataGen done!");
     }

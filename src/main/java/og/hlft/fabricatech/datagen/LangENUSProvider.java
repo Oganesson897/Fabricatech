@@ -1,30 +1,32 @@
 package og.hlft.fabricatech.datagen;
 
-import net.minecraft.data.DataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import og.hlft.fabricatech.Fabricatech;
 import og.hlft.fabricatech.init.RMaterials;
 
 public class LangENUSProvider extends RLangProvider {
-    public LangENUSProvider(DataGenerator generator) {
+
+    public LangENUSProvider(FabricDataOutput generator) {
         super(generator, "en_us");
     }
 
     @Override
-    protected void init() {
-        add(Fabricatech.TAB, "Fabricatech");
-        add(Fabricatech.MATERIALS_TAB, "Fabricatech | Material");
+    public void generateTranslations(TranslationBuilder builder) {
+        builder.add(Fabricatech.TAB, "Fabricatech");
+        builder.add(Fabricatech.MATERIALS_TAB, "Fabricatech | Material");
 
-        item("battery");
+        item(builder, "battery");
 
-        tip("energy", "Energy: ");
+        tip(builder, "energy", "Energy: ");
 
-        add(RMaterials.TIN);
-        add(RMaterials.LEAD);
-        add(RMaterials.NICKEL);
-        add(RMaterials.SILVER);
+        add(builder, RMaterials.TIN);
+        add(builder, RMaterials.LEAD);
+        add(builder, RMaterials.NICKEL);
+        add(builder, RMaterials.SILVER);
 
-        add(RMaterials.IRON);
-        add(RMaterials.GOLD);
-        add(RMaterials.COPPER);
+        add(builder, RMaterials.IRON);
+        add(builder, RMaterials.GOLD);
+        add(builder, RMaterials.COPPER);
     }
+
 }

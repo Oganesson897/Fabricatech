@@ -6,6 +6,7 @@ import net.minecraft.world.gen.feature.*;
 import og.hlft.fabricatech.Fabricatech;
 import og.hlft.fabricatech.common.veins.OreVein;
 
+@Deprecated
 public class VeinRegistry {
     public static void register() {
        vein("tin_ore", new OreVein("tin", 6, 11, 63, 2).getStoneOreCf(), new OreVein("tin", 6, 6, 63, 2).getStoneOrePf());

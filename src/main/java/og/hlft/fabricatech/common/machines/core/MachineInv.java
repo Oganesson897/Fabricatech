@@ -1,5 +1,7 @@
 package og.hlft.fabricatech.common.machines.core;
 
+import org.jetbrains.annotations.Nullable;
+
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventories;
@@ -7,7 +9,6 @@ import net.minecraft.inventory.SidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.util.collection.DefaultedList;
-import org.jetbrains.annotations.Nullable;
 
 public interface MachineInv extends SidedInventory, ExtendedScreenHandlerFactory {
     DefaultedList<ItemStack> getItems();

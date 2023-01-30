@@ -38,7 +38,7 @@ public enum RMaterialPart {
     }
 
     public static RMaterialPart[] vanilla() {
-        return new RMaterialPart[]{PLATE, GEAR, DUST, ROD};
+        return new RMaterialPart[] { PLATE, GEAR, DUST, ROD };
     }
 
     public String id() {

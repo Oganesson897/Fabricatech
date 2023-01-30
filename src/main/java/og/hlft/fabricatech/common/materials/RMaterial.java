@@ -1,13 +1,13 @@
 package og.hlft.fabricatech.common.materials;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.MapColor;
-import net.minecraft.item.Item;
-import net.minecraft.util.registry.Registry;
+import static og.hlft.fabricatech.Fabricatech.asId;
 
 import java.util.List;
 
-import static og.hlft.fabricatech.Fabricatech.asId;
+import net.minecraft.block.Block;
+import net.minecraft.block.MapColor;
+import net.minecraft.item.Item;
+import net.minecraft.registry.Registries;
 
 public class RMaterial {
     private final String id;
@@ -67,11 +67,11 @@ public class RMaterial {
     }
 
     public Item getPartItem(RMaterialPart part) {
-        return Registry.ITEM.get(asId(makeRID(part)));
+        return Registries.ITEM.get(asId(makeRID(part)));
     }
 
     public Block getPartBlock(RMaterialPart part) {
-        return Registry.BLOCK.get(asId(makeRID(part)));
+        return Registries.BLOCK.get(asId(makeRID(part)));
     }
 
     public MapColor getColor() {

@@ -2,9 +2,10 @@ package og.hlft.fabricatech.common.items.impl;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import og.hlft.fabricatech.common.itemgroups.ItemGroupContent;
 import team.reborn.energy.api.base.SimpleEnergyItem;
 
-public class ElectricItem extends Item implements SimpleEnergyItem {
+public abstract class ElectricItem extends Item implements SimpleEnergyItem, ItemGroupContent {
     public final SimpleEnergyItem energyTier;
 
     public ElectricItem(Settings settings, SimpleEnergyItem tier) {
@@ -43,6 +44,7 @@ public class ElectricItem extends Item implements SimpleEnergyItem {
             throw new UnsupportedOperationException();
         }
 
-        return Math.round((electricItem.getStoredEnergy(stack) * 100f / electricItem.getEnergyCapacity(stack)) * 13) / 100;
+        return Math.round((electricItem.getStoredEnergy(stack) * 100f / electricItem.getEnergyCapacity(stack)) * 13)
+                / 100;
     }
 }

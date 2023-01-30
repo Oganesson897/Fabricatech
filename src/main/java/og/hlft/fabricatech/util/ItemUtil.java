@@ -1,10 +1,10 @@
 package og.hlft.fabricatech.util;
 
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
@@ -14,8 +14,9 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class ItemUtil {
-    public static void energyToolTip(ElectricItem electricItem, ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        Text text = new TranslatableText("tip.fabricatech.energy").formatted(Formatting.AQUA)
+    public static void energyToolTip(ElectricItem electricItem, ItemStack stack, @Nullable World world,
+            List<Text> tooltip, TooltipContext context) {
+        Text text = Text.translatable("tip.fabricatech.energy").formatted(Formatting.AQUA)
                 .append(String.valueOf(electricItem.getStoredEnergy(stack)))
                 .append("/")
                 .append(String.valueOf(electricItem.getEnergyCapacity(stack)))
@@ -23,21 +24,21 @@ public class ItemUtil {
         tooltip.add(text);
     }
 
-    public static void appendFourItem(DefaultedList<ItemStack> itemList, ElectricItem item) {
+    public static void appendFourItem(FabricItemGroupEntries entries, ElectricItem item) {
         for (int i = 1; i <= 4; i++) {
             ItemStack energy = new ItemStack(item);
-            item.setStoredEnergy(energy, item.getEnergyCapacity(energy) * i/4);
-            itemList.add(energy);
+            item.setStoredEnergy(energy, item.getEnergyCapacity(energy) * i / 4);
+            entries.add(energy);
         }
     }
 
-    public static void appendItem(DefaultedList<ItemStack> itemList, ElectricItem item) {
+    public static void appendItem(FabricItemGroupEntries entries, ElectricItem item) {
         ItemStack energy = new ItemStack(item);
         item.setStoredEnergy(energy, item.getEnergyCapacity(energy));
-        itemList.add(energy);
+        entries.add(energy);
     }
 
-    public static boolean compare(ItemStack[] supplyList, Ingredient[] demandList){
+    public static boolean compare(ItemStack[] supplyList, Ingredient[] demandList) {
         List<ItemStack> supply = List.of(supplyList);
         List<Ingredient> demand = List.of(demandList);
         DefaultedList<Boolean> flags = DefaultedList.ofSize(demandList.length, false);

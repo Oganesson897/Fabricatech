@@ -1,45 +1,45 @@
 package og.hlft.fabricatech.datagen;
 
-import net.minecraft.data.DataGenerator;
+import static og.hlft.fabricatech.Fabricatech.MOD_ID;
+
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import og.hlft.fabricatech.Fabricatech;
 import og.hlft.fabricatech.common.materials.RMaterial;
 import og.hlft.fabricatech.common.materials.RMaterialPart;
 import og.hlft.fabricatech.init.RMaterials;
 
-import static og.hlft.fabricatech.Fabricatech.MOD_ID;
-
 public class LangZHCNProvider extends RLangProvider {
-    public LangZHCNProvider(DataGenerator generator) {
+    public LangZHCNProvider(FabricDataOutput generator) {
         super(generator, "zh_cn");
     }
 
     @Override
-    protected void init() {
-        add(Fabricatech.TAB, "法克法克法克");
-        add(Fabricatech.MATERIALS_TAB, "法克法克法克 | 材料");
+    public void generateTranslations(TranslationBuilder builder) {
+        builder.add(Fabricatech.TAB, "法克法克法克");
+        builder.add(Fabricatech.MATERIALS_TAB, "法克法克法克 | 材料");
 
-        item("battery", "电池");
+        item(builder, "battery", "电池");
 
-        tip("energy", "能量: ");
+        tip(builder, "energy", "能量: ");
 
-        add(RMaterials.TIN);
-        add(RMaterials.LEAD);
-        add(RMaterials.NICKEL);
-        add(RMaterials.SILVER);
+        add(builder, RMaterials.TIN);
+        add(builder, RMaterials.LEAD);
+        add(builder, RMaterials.NICKEL);
+        add(builder, RMaterials.SILVER);
 
-        add(RMaterials.IRON);
-        add(RMaterials.GOLD);
-        add(RMaterials.COPPER);
+        add(builder, RMaterials.IRON);
+        add(builder, RMaterials.GOLD);
+        add(builder, RMaterials.COPPER);
     }
 
     @Override
-    protected void add(RMaterial material) {
+    protected void add(TranslationBuilder builder, RMaterial material) {
         for (RMaterialPart part : material.getItemParts()) {
-            map.put("item."+ MOD_ID + "." + material.makeRID(part), material.makeChinese(part));
+            builder.add("item." + MOD_ID + "." + material.makeRID(part), material.makeChinese(part));
         }
 
         for (RMaterialPart part : material.getBlockParts()) {
-            map.put("block."+ MOD_ID + "." + material.makeRID(part), material.makeChinese(part));
+            builder.add("block." + MOD_ID + "." + material.makeRID(part), material.makeChinese(part));
         }
     }
 }

@@ -10,8 +10,6 @@ import net.minecraft.world.World;
 import og.hlft.fabricatech.common.machines.RMachine;
 import og.hlft.fabricatech.util.ItemUtil;
 
-import static og.hlft.fabricatech.Fabricatech.asId;
-
 public class MachineRecipe<T extends RMachine> implements Recipe<MachineTile> {
     public T rMachine;
     private final Identifier id;
@@ -52,7 +50,7 @@ public class MachineRecipe<T extends RMachine> implements Recipe<MachineTile> {
 
     @Override
     public Identifier getId() {
-        return asId(rMachine.machineID);
+        return this.id;
     }
 
     @Override
