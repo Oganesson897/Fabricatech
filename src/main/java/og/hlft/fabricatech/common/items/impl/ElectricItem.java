@@ -1,11 +1,10 @@
 package og.hlft.fabricatech.common.items.impl;
 
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import og.hlft.fabricatech.common.itemgroups.ItemGroupContent;
+import og.hlft.fabricatech.common.items.base.BaseItem;
 import team.reborn.energy.api.base.SimpleEnergyItem;
 
-public abstract class ElectricItem extends Item implements SimpleEnergyItem, ItemGroupContent {
+public class ElectricItem extends BaseItem implements SimpleEnergyItem {
     public final SimpleEnergyItem energyTier;
 
     public ElectricItem(Settings settings, SimpleEnergyItem tier) {

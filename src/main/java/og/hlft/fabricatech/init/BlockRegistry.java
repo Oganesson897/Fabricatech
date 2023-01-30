@@ -1,14 +1,17 @@
 package og.hlft.fabricatech.init;
 
+import static og.hlft.fabricatech.Fabricatech.asId;
+
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.*;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import og.hlft.fabricatech.Fabricatech;
 import og.hlft.fabricatech.common.blocks.FrameBlock;
 import og.hlft.fabricatech.common.materials.RMaterial;
 import og.hlft.fabricatech.common.materials.RMaterialPart;
-
-import static og.hlft.fabricatech.Fabricatech.asId;
 
 public class BlockRegistry {
     public static void register() {
@@ -39,7 +42,7 @@ public class BlockRegistry {
     }
 
     private static void block(String id, Block block) {
-        Registry.register(Registry.BLOCK, Fabricatech.asId(id), block);
+        Registry.register(Registries.BLOCK, Fabricatech.asId(id), block);
     }
 
     private static void block(String id, AbstractBlock.Settings settings) {
@@ -47,6 +50,6 @@ public class BlockRegistry {
     }
 
     public static Block getBlock(String id) {
-        return Registry.BLOCK.get(asId(id));
+        return Registries.BLOCK.get(asId(id));
     }
 }

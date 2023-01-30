@@ -1,18 +1,19 @@
 package og.hlft.fabricatech.init;
 
+import static og.hlft.fabricatech.Fabricatech.asId;
+
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import og.hlft.fabricatech.Fabricatech;
 import og.hlft.fabricatech.common.items.EnergyTiers;
+import og.hlft.fabricatech.common.items.base.BaseBlockItem;
+import og.hlft.fabricatech.common.items.base.BaseItem;
+import og.hlft.fabricatech.common.items.base.BaseMaterialBlockItem;
 import og.hlft.fabricatech.common.items.impl.BatteryItem;
 import og.hlft.fabricatech.common.materials.RMaterial;
 import og.hlft.fabricatech.common.materials.RMaterialPart;
-
-import static og.hlft.fabricatech.Fabricatech.TAB;
-import static og.hlft.fabricatech.Fabricatech.asId;
-
 
 public class ItemRegistry {
     public static void register() {
@@ -29,40 +30,40 @@ public class ItemRegistry {
     }
 
     protected static void material(RMaterial material) {
-        for (RMaterialPart part: material.getItemParts()) {
+        for (RMaterialPart part : material.getItemParts()) {
             simpleMaterial(material.makeRID(part));
         }
 
-        for (RMaterialPart part: material.getBlockParts()) {
-            blockItem(material.makeRID(part), materialSettings());
+        for (RMaterialPart part : material.getBlockParts()) {
+            materialBlockItem(material.makeRID(part), settings());
         }
     }
 
     private static void simpleItem(String id) {
-        item(id, new Item(settings()));
+        item(id, new BaseItem(settings()));
     }
 
     private static void simpleMaterial(String id) {
-        item(id, new Item(materialSettings()));
+        item(id, new Item(settings()));
     }
 
     private static void blockItem(String id, Item.Settings settings) {
-        item(id, new BlockItem(Registry.BLOCK.get(asId(id)), settings));
+        item(id, new BaseBlockItem(Registries.BLOCK.get(asId(id)), settings));
+    }
+
+    private static void materialBlockItem(String id, Item.Settings settings) {
+        item(id, new BaseMaterialBlockItem(Registries.BLOCK.get(asId(id)), settings));
     }
 
     private static void item(String id, Item item) {
-        Registry.register(Registry.ITEM, Fabricatech.asId(id), item);
+        Registry.register(Registries.ITEM, Fabricatech.asId(id), item);
     }
 
     public static Item.Settings settings() {
-        return new FabricItemSettings().group(TAB);
-    }
-
-    public static Item.Settings materialSettings() {
-        return new Item.Settings().group(Fabricatech.MATERIALS_TAB);
+        return new FabricItemSettings();
     }
 
     public static Item getItem(String id) {
-        return Registry.ITEM.get(asId(id));
+        return Registries.ITEM.get(asId(id));
     }
 }

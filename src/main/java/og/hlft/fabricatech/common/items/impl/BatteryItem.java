@@ -6,11 +6,9 @@ import org.jetbrains.annotations.Nullable;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.world.World;
-import og.hlft.fabricatech.Fabricatech;
 import og.hlft.fabricatech.util.ItemUtil;
 import team.reborn.energy.api.base.SimpleEnergyItem;
 
@@ -27,10 +25,5 @@ public class BatteryItem extends ElectricItem {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         ItemUtil.energyToolTip(this, stack, world, tooltip, context);
-    }
-
-    @Override
-    public @Nullable ItemGroup getItemGroup() {
-        return Fabricatech.TAB;
     }
 }
