@@ -36,7 +36,8 @@ public class RBlockLootProvider extends SimpleFabricLootTableProvider {
         for (RMaterialPart part : material.getBlockParts()) {
             if (part == RMaterialPart.ORE || part == RMaterialPart.DEEPSLATE_ORE)
                 continue;
-            consumer.accept(asId(material.makeRID(part)), BlockLootTableGenerator.drops(material.getPartBlock(part).asItem(), ConstantLootNumberProvider.create(1)));
+            consumer.accept(asId(material.makeRID(part)), BlockLootTableGenerator
+                    .drops(material.getPartBlock(part).asItem(), ConstantLootNumberProvider.create(1)));
         }
     }
 }
