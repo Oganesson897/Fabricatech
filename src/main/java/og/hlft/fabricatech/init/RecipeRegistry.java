@@ -12,6 +12,12 @@ import og.hlft.fabricatech.common.machines.RMachine;
 public class RecipeRegistry {
     public static void register() {
         machine(RMachines.ALLOYING_FURNACE);
+        machine(RMachines.MACERATOR);
+        machine(RMachines.ARC_FURNACE);
+        machine(RMachines.CENTRIFUGE);
+        machine(RMachines.CIRCUIT_ETCHER);
+        machine(RMachines.COMPRESSOR);
+        machine(RMachines.MIXER);
     }
 
     private static void machine(RMachine machine) {
